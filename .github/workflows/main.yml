@@ -6,7 +6,7 @@ on:
     - cron:  '*/15 * * * *'
 
 branches:
-- dev1
+- dev
 
 jobs:
   build:
