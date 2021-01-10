@@ -2,10 +2,7 @@ name: Gatsby Publish
 
 on:
   schedule:
-    - cron:  '*/15 * * * *'
-
-branches:
-- dev
+    - cron:  '*/5 * * * *'
 
 jobs:
   build:
