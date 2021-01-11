@@ -7,6 +7,9 @@ import parse from "html-react-parser"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 
+// We're using disqus
+import { DiscussionEmbed } from "disqus-react"
+
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,6 +18,11 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
     fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
     alt: post.featuredImage?.node?.alt || ``,
+  }
+  const disqusShortname = "test123";
+  const disqusConfig = {
+          identifier: post.id,
+          title: post.title,
   }
 
   return (
@@ -44,9 +52,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         {!!post.content && (
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
-
         <hr />
-
         <footer>
           <Bio />
         </footer>
@@ -78,6 +84,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
             )}
           </li>
         </ul>
+	     <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </nav>
     </Layout>
   )

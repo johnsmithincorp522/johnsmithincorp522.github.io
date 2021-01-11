@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@wordpress/block-library": "^2.26.4",
+    "disqus-react": "^1.0.10",
     "gatsby": "^2.27.0",
     "gatsby-image": "^2.6.0",
+    "gatsby-plugin-disqus": "^1.2.2",
     "gatsby-plugin-google-analytics": "^2.8.0",
     "gatsby-plugin-google-gtag": "^2.5.0",
     "gatsby-plugin-google-tagmanager": "^2.8.0",

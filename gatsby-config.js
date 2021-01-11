@@ -7,12 +7,6 @@
  */
 
 module.exports = {
-  /**
-   * Adding plugins to this array adds them to your Gatsby site.
-   *
-   * Gatsby has a rich ecosystem of plugins.
-   * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
-   */
   plugins: [
     {
       /**
@@ -25,16 +19,14 @@ module.exports = {
        */
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
         url:
-          `https://gamingorigin.cf/graphql`,
+          `http://webtenders-server.ddns.net/graphql`,
         schema: {
-         requestConcurrency: 5, // currently set to undefined
-         previewRequestConcurrency: 2, // currently set to undefined
+         requestConcurrency: 25,
+         previewRequestConcurrency: 20,
        }
       },
     },
-
     /**
      * We need this plugin so that it adds the "File.publicURL" to our site
      * It will allow us to access static url's for assets like PDF's
@@ -77,6 +69,7 @@ module.exports = {
 
     },
   },
+
  /*  {
      resolve: `gatsby-theme-i18n`,
      options: {
