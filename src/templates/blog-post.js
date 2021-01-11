@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
     alt: post.featuredImage?.node?.alt || ``,
   }
-  const disqusShortname = "test123";
+  const disqusShortname = "realtimeupdates";
   const disqusConfig = {
           identifier: post.id,
           title: post.title,
