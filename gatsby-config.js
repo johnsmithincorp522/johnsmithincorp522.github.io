@@ -1,22 +1,6 @@
-/**
- * 👋 Hey there!
- * This file is the starting point for your new WordPress/Gatsby site! 🚀
- * For more information about what this file is and does, see
- * https://www.gatsbyjs.com/docs/gatsby-config/
- *
- */
-
 module.exports = {
   plugins: [
     {
-      /**
-       * First up is the WordPress source plugin that connects Gatsby
-       * to your WordPress site.
-       *
-       * visit the plugin docs to learn more
-       * https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/README.md
-       *
-       */
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url:
@@ -27,12 +11,6 @@ module.exports = {
        }
       },
     },
-    /**
-     * We need this plugin so that it adds the "File.publicURL" to our site
-     * It will allow us to access static url's for assets like PDF's
-     *
-     * See https://www.gatsbyjs.org/packages/gatsby-source-filesystem/ for more info
-     */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,7 +22,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
           "G-2CBQ6PWNJG", // Google Analytics / GA
         ],
@@ -55,18 +32,21 @@ module.exports = {
     resolve: "gatsby-plugin-google-tagmanager",
     options: {
       id: "GTM-NFMBKW5",
-
-      // Include GTM in development.
-      //
-      // Defaults to false meaning GTM will only be loaded in production.
       includeInDevelopment: false,
-
-      // datalayer to be set before GTM is loaded
-      // should be an object or a function that is executed in the browser
-      //
-      // Defaults to null
       defaultDataLayer: { platform: "gatsby" },
 
+    },
+  },
+  {
+    resolve: `gatsby-plugin-sharp`,
+    options: {
+       // Available options and their defaults:
+       base64Width: 20,
+       forceBase64Format: `webp`, // valid formats: png,jpg,webp
+       useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+       stripMetadata: true,
+       defaultQuality: 50,
+       failOnError: true,
     },
   },
 
@@ -84,7 +64,6 @@ module.exports = {
      * if you're curious about it.
      */
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
@@ -107,6 +86,6 @@ module.exports = {
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline
      */
-    // `gatsby-plugin-offline`,
+     `gatsby-plugin-offline`,
   ],
 }
