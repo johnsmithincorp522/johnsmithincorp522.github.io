@@ -27,7 +27,7 @@ const Layout = ({ isHomePage, children }) => {
       <header className="global-header">
         {isHomePage ? (
           <h1 className="main-heading">
-	    <img src={logo} alt="Logo" class="center"/>
+	    <center><img src={logo} alt="Logo"/></center>
           </h1>
         ) : (
           <Link className="header-link-home" to="/">
