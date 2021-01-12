@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+     siteUrl: `https://thetechreview.tk`,
+	    },
+     plugins: [`gatsby-plugin-feed`],
   plugins: [
     {
       resolve: `gatsby-source-wordpress-experimental`,
