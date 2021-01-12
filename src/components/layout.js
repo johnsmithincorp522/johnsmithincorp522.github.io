@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
+import logo from "./logo.jpg"
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -17,13 +18,16 @@ const Layout = ({ isHomePage, children }) => {
       }
     }
   `)
+   
+  // If we need to have the site name generate via graphql add this under main-heading
+  // <Link to="/">{parse(title)}</Link>
 
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
       <header className="global-header">
         {isHomePage ? (
           <h1 className="main-heading">
-            <Link to="/">{parse(title)}</Link>
+	    <img src={logo} alt="Logo" class="center"/>
           </h1>
         ) : (
           <Link className="header-link-home" to="/">
@@ -35,11 +39,11 @@ const Layout = ({ isHomePage, children }) => {
       <main>{children}</main>
 
       <footer>
-        © {new Date().getFullYear()}, Built with
+        © {new Date().getFullYear()}, Proudly offered by
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a href="https://thedownloadproxy.cf">Download Proxy</a>
         {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
+        And <a href="https://gamingorigin.cf/">Gaming Origin</a>
       </footer>
     </div>
   )
