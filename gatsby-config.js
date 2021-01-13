@@ -119,8 +119,8 @@ module.exports = {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter WordPress Blog`,
-        short_name: `GatsbyJS & WP`,
+        name: `Gaming Origin`,
+        short_name: `GO`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

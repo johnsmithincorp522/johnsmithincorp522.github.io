@@ -41,7 +41,7 @@ const Layout = ({ isHomePage, children }) => {
       <footer>
         © {new Date().getFullYear()}, Proudly offered by
         {` `}
-        <a href="https://thedownloadproxy.cf">Download Proxy</a>
+        <a href="https://thedownloadproxy.cf/">Download Proxy</a>
         {` `}
         And <a href="https://gamingorigin.cf/">Gaming Origin</a>
       </footer>
