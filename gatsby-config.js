@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
      siteUrl: `https://thetechreview.tk`,
 	    },
-     plugins: [`gatsby-plugin-feed`],
   plugins: [
     {
       resolve: `gatsby-source-wordpress-experimental`,
@@ -114,6 +113,7 @@ module.exports = {
      * if you're curious about it.
      */
     `gatsby-transformer-sharp`,
+    `gatsby-theme-90s`,
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
