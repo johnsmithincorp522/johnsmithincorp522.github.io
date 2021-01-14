@@ -87,7 +87,7 @@ export const pageQuery = graphql`
     $nextPostId: String
   ) {
     # selecting the current post by id
-    post: wpPost(id: { eq: $id }) {
+    post: wpPost( id: { eq: $id }) {
       id
       excerpt
       content
