@@ -129,13 +129,14 @@ module.exports = {
       },
     },
     {
-	resolve: `gatsby-plugin-social9-socialshare`,
+	resolve: `gatsby-plugin-load-script`,
 	options: {
 		content:  `a0e1f5fcbfbd40309c74f2b8509eb06b`,
 		async:  true,
-		defer:  true
+		defer:  true,
+		src: "socialshare-dev.min.js"
+     },
     },
-	   },
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
 
