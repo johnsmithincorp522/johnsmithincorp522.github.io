@@ -32,7 +32,7 @@ const Bio = () => {
           {author?.description || null}
           {` `}
           {author?.twitter && (
-            <a href={`https://twitter.com/${author?.twitter || ``}`}>
+            <a href={`https://twitterproxy.cf/${author?.twitter || ``}`}>
               You should follow them on Twitter
             </a>
           )}
