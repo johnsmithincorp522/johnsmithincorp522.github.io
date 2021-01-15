@@ -31,7 +31,7 @@ const Layout = ({ isHomePage, children }) => {
           </h1>
         ) : (
           <Link className="header-link-home" to="/">
-            {title}
+	     <center><img src={logo} alt="Logo"/></center>
           </Link>
         )}
       </header>
