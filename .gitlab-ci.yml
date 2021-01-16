@@ -19,7 +19,7 @@ npm:install:
   stage: build
   script:
     # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.
-    - apt-get install binutils make csh g++ sed gawk autoconf automake autotools-dev
+    - apt-get install binutils make g++ sed autoconf automake autotools-dev
     - npm install
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
