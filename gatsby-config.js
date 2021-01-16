@@ -89,7 +89,6 @@ module.exports = {
   {
     resolve: `gatsby-plugin-sharp`,
     options: {
-       // Available options and their defaults:
        base64Width: 20,
        forceBase64Format: `webp`, // valid formats: png,jpg,webp
        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
@@ -98,25 +97,21 @@ module.exports = {
        failOnError: true,
     },
   },
-
- /*  {
-     resolve: `gatsby-theme-i18n`,
-     options: {
-       defaultLang: `zh`,
-       configPath: require.resolve(`./i18n/config.json`),
+  {
+      resolve: "gatsby-plugin-load-script",
+       options: {
+        id: "s9-sdk",
+        async: true,
+        defer: true,
+        content: "a0e1f5fcbfbd40309c74f2b8509eb06b",
+        src: "/socialshare.min.js"
      },
-   }, */
+   },
 
-    /**
-     * The following two plugins are required if you want to use Gatsby image
-     * See https://www.gatsbyjs.com/docs/gatsby-image/#setting-up-gatsby-image
-     * if you're curious about it.
-     */
     `gatsby-transformer-sharp`,
     `gatsby-theme-90s`,
 
-    {
-      // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
+   {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gaming Origin`,
@@ -126,25 +121,9 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-load-script",
-      options: {
-      id: "s9-sdk",
-      async: true,
-      defer: true,
-      content: "a0e1f5fcbfbd40309c74f2b8509eb06b",
-      src: "socialshare.min.js"
      },
-    },
-    // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
+   },
     `gatsby-plugin-react-helmet`,
-
-    /**
-     * this (optional) plugin enables Progressive Web App + Offline functionality
-     * To learn more, visit: https://gatsby.dev/offline
-     */
-     `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
