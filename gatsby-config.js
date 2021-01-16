@@ -9,7 +9,7 @@ module.exports = {
         url:
           `http://webtenders-server.ddns.net/graphql`,
         schema: {
-         requestConcurrency: 25,
+         requestConcurrency: 35,
          previewRequestConcurrency: 20,
        }
       },
@@ -129,12 +129,13 @@ module.exports = {
       },
     },
     {
-	resolve: `gatsby-plugin-load-script`,
-	options: {
-		content:  `a0e1f5fcbfbd40309c74f2b8509eb06b`,
-		async:  true,
-		defer:  true,
-		src: "socialshare-dev.min.js"
+      resolve: "gatsby-plugin-load-script",
+      options: {
+      id: "s9-sdk",
+      async: true,
+      defer: true,
+      content: "a0e1f5fcbfbd40309c74f2b8509eb06b",
+      src: "socialshare.min.js"
      },
     },
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
