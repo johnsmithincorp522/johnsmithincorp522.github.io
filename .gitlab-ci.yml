@@ -2,7 +2,6 @@ image: "node:lts-alpine"
 
 stages:
   - build
-  - test
   - deploy
 
 # These folders are cached between builds
@@ -16,29 +15,11 @@ cache:
     - .cache/
     - public/
 
-yarn:install:
+npm:install:
   stage: build
   script:
     # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.
-    - yarn install --frozen-lockfile --check-files --non-interactive
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-    - if: $CI_MERGE_REQUEST_ID
-
-test:unit:
-  stage: test
-  needs: ["yarn:install"]
-  script:
-    - yarn test:unit
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-    - if: $CI_MERGE_REQUEST_ID
-
-test:gatsby:
-  stage: test
-  needs: ["yarn:install"]
-  script:
-    - ./node_modules/.bin/gatsby info
+    - npm install
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_MERGE_REQUEST_ID
@@ -46,9 +27,7 @@ test:gatsby:
 pages:
   stage: deploy
   needs: 
-    - yarn:install
-    - test:unit
-    - test:gatsby
+    - npm:install
   script:
     - ./node_modules/.bin/gatsby build --prefix-paths
   artifacts:
