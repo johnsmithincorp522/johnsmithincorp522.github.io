@@ -22,7 +22,7 @@ yarn:install:
     # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.
     - yarn install --frozen-lockfile --check-files --non-interactive
   rules:
-    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_MERGE_REQUEST_ID
 
 test:unit:
@@ -31,7 +31,7 @@ test:unit:
   script:
     - yarn test:unit
   rules:
-    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_MERGE_REQUEST_ID
 
 test:gatsby:
@@ -40,7 +40,7 @@ test:gatsby:
   script:
     - ./node_modules/.bin/gatsby info
   rules:
-    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_MERGE_REQUEST_ID
 
 pages:
