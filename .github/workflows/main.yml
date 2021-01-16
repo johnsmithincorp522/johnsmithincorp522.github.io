@@ -12,10 +12,9 @@ jobs:
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
-
-     - uses: SvanBoxel/gitlab-mirror-and-ci-action@0.2
-       with:
-          args: "https://gitlab.com/johnsmithincorp522/johnsmithincorp522.gitlab.io"
+      - uses: SvanBoxel/gitlab-mirror-and-ci-action@0.2
+        with:
+         args: "https://gitlab.com/johnsmithincorp522/johnsmithincorp522.gitlab.io"
        env:
         GITLAB_HOSTNAME: "gitlab.com"
         GITLAB_USERNAME: "johnsmithincorp522"
