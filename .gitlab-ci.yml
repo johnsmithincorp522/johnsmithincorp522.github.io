@@ -21,7 +21,6 @@ npm:install:
     # Install via yarn with frozen-lockfile to allow reproducible dependencies and check-files option to check if the node_modules cache is valid.
     - apt-get install binutils make g++ sed autoconf automake autotools-dev
     - npm install
-    - npm install gatsby
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_MERGE_REQUEST_ID
@@ -31,6 +30,7 @@ pages:
   needs: 
     - npm:install
   script:
+    - npm install gatsby
     - gatsby build --prefix-paths
   artifacts:
     paths:
