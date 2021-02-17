@@ -7,7 +7,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
         url:
-          `http://webtenders-server.ddns.net/graphql`,
+          `http://webtenders-server.ddns.net:8444/graphql`,
         schema: {
          requestConcurrency: 35,
          previewRequestConcurrency: 20,
