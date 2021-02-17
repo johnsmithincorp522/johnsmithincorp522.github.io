@@ -12,7 +12,7 @@ module.exports = {
            allow404Images: true
            },
         schema: {
-         requestConcurrency: 35,
+         requestConcurrency: 20,
          previewRequestConcurrency: 20,
        }
       },
