@@ -4,7 +4,7 @@ module.exports = {
 	    },
   plugins: [
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url:
           `http://webtenders-server.ddns.net:8444/graphql`,
