@@ -8,6 +8,9 @@ module.exports = {
       options: {
         url:
           `http://webtenders-server.ddns.net:8444/graphql`,
+	production: {
+           allow404Images: true
+           }
         schema: {
          requestConcurrency: 35,
          previewRequestConcurrency: 20,
